@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fred Essien Udo & Co. | Accounting, Tax & Audit Services in Nigeria</title>
+  <meta name="description" content="Nigeria's trusted accounting, tax, and audit firm with 30+ years of excellence. Get your free financial health audit today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1F3A;
+      --navy-mid: #132D52;
+      --navy-light: #1A3D6E;
+      --gold: #C9A84C;
+      --gold-light: #E2C070;
+      --gold-pale: #F5EDD0;
+      --white: #FFFFFF;
+      --off-white: #F8F9FB;
+      --gray-100: #EDF0F4;
+      --gray-300: #B0B9C6;
+      --gray-500: #6B7A8D;
+      --gray-700: #374151;
+      --success: #16A34A;
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --shadow-sm: 0 2px 8px rgba(11,31,58,0.08);
+      --shadow-md: 0 8px 32px rgba(11,31,58,0.12);
+      --shadow-lg: 0 20px 60px rgba(11,31,58,0.18);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-700);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── SCROLL PROGRESS BAR ── */
+    #scrollBar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      background-size: 200% 100%;
+      z-index: 9999;
+      transition: width 0.1s linear;
+      animation: shimmer 2s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 3px; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(11,31,58,0.0);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav.scrolled {
+      background: rgba(11,31,58,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom-color: rgba(201,168,76,0.2);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeDown 0.7s 0.3s forwards;
+    }
+
+    .logo-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      letter-spacing: -1px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover .logo-icon { transform: rotate(-5deg) scale(1.1); }
+
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name { font-family: var(--font-heading); font-size: 16px; color: var(--white); line-height: 1.1; }
+    .logo-sub { font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      opacity: 0;
+      animation: fadeDown 0.7s 0.5s forwards;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+      color: var(--navy) !important;
+      padding: 10px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.2);
+      transform: skewX(-20deg);
+      transition: left 0.4s ease;
+    }
+
+    .nav-cta:hover::before { left: 100%; }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+
+    /* Animated gradient background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 20%, rgba(201,168,76,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, rgba(26,61,110,0.8) 0%, transparent 50%),
+        linear-gradient(135deg, #0B1F3A 0%, #132D52 50%, #0d2543 100%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgPulse {
+      0%   { opacity: 1; }
+      100% { filter: brightness(1.07); }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: floatParticle var(--dur) var(--delay) infinite ease-in-out;
+    }
+
+    @keyframes floatParticle {
+      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+      10%  { opacity: var(--op); }
+      90%  { opacity: var(--op); }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* Geometric shapes */
+    .geo-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .geo {
+      position: absolute;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 12px;
+      animation: geoFloat var(--dur, 12s) var(--delay, 0s) infinite ease-in-out;
+    }
+
+    @keyframes geoFloat {
+      0%, 100% { transform: translateY(0) rotate(var(--rot0, 0deg)); }
+      50%       { transform: translateY(var(--ty, -30px)) rotate(var(--rot1, 15deg)); }
+    }
+
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.6s forwards;
+    }
+
+    .badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.2; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line-inner {
+      display: block;
+      transform: translateY(100%);
+      animation: lineReveal 0.8s forwards;
+    }
+
+    .hero h1 .line:nth-child(1) .line-inner { animation-delay: 0.85s; }
+    .hero h1 .line:nth-child(2) .line-inner { animation-delay: 1.05s; color: var(--gold); }
+    .hero h1 .line:nth-child(3) .line-inner { animation-delay: 1.25s; }
+
+    @keyframes lineReveal {
+      to { transform: translateY(0); }
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--gray-300);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.3s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.5s forwards;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,168,76,0.5); }
+    .btn-primary:hover::before { background: rgba(255,255,255,0.1); }
+    .btn-primary:active { transform: translateY(-1px); }
+
+    .btn-arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.22);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 52px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.7s forwards;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .stat-card:hover {
+      background: rgba(201,168,76,0.08);
+      border-color: rgba(201,168,76,0.25);
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--gray-300);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    /* Hero right card */
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      animation: fadeLeft 0.9s 1.0s forwards;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: scanline 3s linear infinite;
+    }
+
+    @keyframes scanline {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .hero-card-title { font-family: var(--font-heading); font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .hero-card-sub { font-size: 13px; color: var(--gray-300); margin-bottom: 28px; }
+
+    .service-pills { display: flex; flex-direction: column; gap: 12px; }
+
+    .service-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: all 0.3s ease;
+      cursor: default;
+      transform: translateX(20px);
+      opacity: 0;
+    }
+
+    .service-pill.loaded {
+      animation: pillSlideIn 0.5s forwards;
+    }
+
+    @keyframes pillSlideIn {
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .service-pill:hover {
+      background: rgba(201,168,76,0.08);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateX(4px);
+    }
+
+    .pill-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .service-pill:hover .pill-icon { transform: scale(1.15) rotate(-5deg); }
+
+    .pill-text strong { display: block; font-size: 13px; color: var(--white); font-weight: 600; }
+    .pill-text span { font-size: 11px; color: var(--gray-300); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--gold-pale);
+      border-top: 1px solid rgba(201,168,76,0.3);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 18px 24px;
+      overflow: hidden;
+    }
+
+    .trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .trust-item.visible { opacity: 1; transform: translateY(0); }
+    .trust-item svg { color: var(--gold); }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--off-white); }
+    .services-header { text-align: center; margin-bottom: 64px; }
+    .services-header .section-desc { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.03), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,0.15);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover::after { opacity: 1; }
+
+    .card-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.2));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+      transition: transform 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-card:hover .card-icon { transform: scale(1.1) rotate(-8deg); }
+
+    .card-title { font-family: var(--font-heading); font-size: 20px; color: var(--navy); margin-bottom: 12px; position: relative; z-index: 1; }
+    .card-desc { font-size: 14px; color: var(--gray-500); line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 1; }
+
+    .card-list { list-style: none; display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1; }
+    .card-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--gray-700); }
+    .card-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: var(--radius-lg);
+      padding: 48px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+      animation: orb 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes orb {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-20px, 20px) scale(1.2); }
+    }
+
+    .about-initials {
+      width: 100px; height: 100px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 36px;
+      color: var(--navy);
+      font-weight: 800;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 0 rgba(201,168,76,0.4);
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+      70%  { box-shadow: 0 0 0 18px rgba(201,168,76,0); }
+      100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+    }
+
+    .about-name { font-family: var(--font-heading); font-size: 22px; color: var(--white); position: relative; z-index: 1; }
+    .about-title-tag { font-size: 12px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; position: relative; z-index: 1; }
+
+    .about-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .metric:hover { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.3); transform: scale(1.04); }
+
+    .metric-val { font-family: var(--font-heading); font-size: 26px; color: var(--gold); display: block; }
+    .metric-lbl { font-size: 10px; color: var(--gray-300); text-transform: uppercase; letter-spacing: 0.8px; }
+
+    .about-content .section-desc { max-width: 100%; margin-bottom: 28px; }
+
+    .about-points { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+
+    .about-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .about-point.visible { opacity: 1; transform: translateX(0); }
+
+    .point-icon {
+      width: 40px; height: 40px;
+      background: var(--gold-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .about-point:hover .point-icon { transform: scale(1.15) rotate(-5deg); }
+
+    .point-text strong { display: block; font-size: 14px; color: var(--navy); margin-bottom: 2px; }
+    .point-text span { font-size: 13px; color: var(--gray-500); }
+
+    /* ── FREE AUDIT ── */
+    #free-audit {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d2543 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .audit-bg-orb-1 {
+      width: 500px; height: 500px;
+      background: rgba(201,168,76,0.08);
+      top: -20%; right: -10%;
+      animation: driftOrb 10s ease-in-out infinite alternate;
+    }
+
+    .audit-bg-orb-2 {
+      width: 300px; height: 300px;
+      background: rgba(26,61,110,0.5);
+      bottom: -10%; left: -5%;
+      animation: driftOrb 14s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes driftOrb {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(30px, -30px); }
+    }
+
+    .audit-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .audit-header { text-align: center; margin-bottom: 52px; }
+    .audit-header .section-title { color: var(--white); }
+    .audit-header .section-desc { color: var(--gray-300); margin: 0 auto; }
+
+    .audit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: var(--radius-lg);
+      padding: 52px 48px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
+      animation: topGlow 4s linear infinite;
+    }
+
+    @keyframes topGlow {
+      0%   { opacity: 0.4; transform: scaleX(0.5); }
+      50%  { opacity: 1; transform: scaleX(1); }
+      100% { opacity: 0.4; transform: scaleX(0.5); }
+    }
+
+    /* Progress dots */
+    .steps-progress {
+      display: flex;
+      align-items: center;
+      margin-bottom: 44px;
+    }
+
+    .step-dot {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      color: var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-dot.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.2);
+    }
+
+    .step-dot.done {
+      background: var(--success);
+      border-color: var(--success);
+      color: var(--white);
+    }
+
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      transition: background 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-line.done::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--success);
+      animation: fillLine 0.4s ease forwards;
+    }
+
+    @keyframes fillLine {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    /* Quiz */
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: stepIn 0.4s ease; }
+
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .quiz-question { font-family: var(--font-heading); font-size: 22px; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+    .quiz-hint { font-size: 13px; color: var(--gray-300); margin-bottom: 28px; }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .quiz-option {
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-option::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(201,168,76,0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .quiz-option:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .quiz-option:hover::after { opacity: 1; }
+
+    .quiz-option.selected {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.12);
+      color: var(--gold-light);
+    }
+
+    .quiz-option-icon { font-size: 20px; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: 12px; font-weight: 600; color: var(--gray-300); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .form-input {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--white);
+      font-size: 14px;
+      font-family: var(--font-body);
+      transition: border-color 0.25s, box-shadow 0.25s;
+      outline: none;
+    }
+
+    .form-input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+
+    select.form-input option { background: var(--navy); color: var(--white); }
+
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; }
+
+    .btn-quiz-prev {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      color: var(--gray-300);
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .btn-quiz-prev:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+    .btn-quiz-next {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-quiz-next::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: rgba(255,255,255,0.25);
+      transform: skewX(-20deg);
+      transition: left 0.5s ease;
+    }
+
+    .btn-quiz-next:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.45); }
+    .btn-quiz-next:hover::before { left: 150%; }
+
+    .result-card { text-align: center; animation: stepIn 0.5s ease; }
+
+    .result-icon {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 24px;
+      animation: popIn 0.6s 0.1s both cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .result-title { font-family: var(--font-heading); font-size: 28px; color: var(--white); margin-bottom: 12px; }
+
+    .result-score {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px;
+      padding: 8px 24px;
+      margin-bottom: 28px;
+    }
+
+    .result-score span { font-size: 13px; color: var(--gold-light); font-weight: 600; }
+
+    .result-desc { color: var(--gray-300); font-size: 15px; line-height: 1.7; max-width: 500px; margin: 0 auto 32px; }
+
+    /* ── PROCESS ── */
+    #process { background: var(--off-white); }
+    .process-header { text-align: center; margin-bottom: 64px; }
+    .process-header .section-desc { margin: 0 auto; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: calc(12.5% + 26px);
+      right: calc(12.5% + 26px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy), var(--gold), var(--navy));
+      z-index: 0;
+    }
+
+    .process-step {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid var(--gray-100);
+      position: relative;
+      z-index: 1;
+      transition: all 0.35s ease;
+    }
+
+    .process-step:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); border-color: rgba(201,168,76,0.2); }
+
+    .step-number {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .process-step:hover .step-number { transform: scale(1.1) rotate(-10deg); }
+
+    .step-title { font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--white); }
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-header .section-desc { margin: 0 auto; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px; right: 20px;
+      font-family: var(--font-heading);
+      font-size: 120px;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      pointer-events: none;
+      transition: color 0.3s;
+    }
+
+    .testimonial-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); border-color: rgba(201,168,76,0.2); }
+    .testimonial-card:hover::before { color: rgba(201,168,76,0.15); }
+
+    .stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .star {
+      color: var(--gold);
+      font-size: 16px;
+      display: inline-block;
+      animation: starPop 0.4s ease both;
+    }
+
+    .testimonial-text { font-size: 14px; color: var(--gray-700); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .author-name { font-weight: 700; font-size: 14px; color: var(--navy); }
+    .author-role { font-size: 12px; color: var(--gray-500); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--gold), #d4b056, var(--gold-light));
+      background-size: 200% 200%;
+      animation: gradientShift 5s ease infinite;
+      padding: 72px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+
+    .cta-inner h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .cta-inner p { font-size: 16px; color: rgba(11,31,58,0.75); margin-bottom: 36px; }
+
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(11,31,58,0.25);
+    }
+
+    .btn-dark:hover { background: var(--navy-mid); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(11,31,58,0.35); }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--navy);
+      padding: 15px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      border: 2px solid var(--navy);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-dark:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--off-white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info .section-desc { margin-bottom: 40px; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 24px; }
+
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .contact-item:hover .contact-icon { transform: scale(1.1) rotate(-5deg); background: var(--navy-light); }
+
+    .contact-item-label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .contact-item-value { font-size: 15px; color: var(--navy); font-weight: 500; }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+      box-shadow: var(--shadow-md);
+      transition: box-shadow 0.3s;
+    }
+
+    .contact-form:hover { box-shadow: var(--shadow-lg); }
+
+    .contact-form h3 { font-family: var(--font-heading); font-size: 22px; color: var(--navy); margin-bottom: 4px; }
+    .contact-form-sub { font-size: 13px; color: var(--gray-500); margin-bottom: 28px; }
+
+    .light-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .light-group { display: flex; flex-direction: column; gap: 6px; }
+    .light-group.full { grid-column: 1 / -1; }
+    .light-group label { font-size: 12px; font-weight: 600; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .light-input {
+      background: var(--off-white);
+      border: 1.5px solid var(--gray-100);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      color: var(--gray-700);
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      width: 100%;
+    }
+
+    .light-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+
+    textarea.light-input { resize: vertical; min-height: 100px; }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--white);
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-submit:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(11,31,58,0.3); }
+    .btn-submit:hover::before { left: 100%; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 72px 24px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand p { font-size: 14px; color: var(--gray-300); line-height: 1.7; margin-top: 16px; max-width: 260px; }
+
+    .footer-col-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .footer-links a {
+      color: var(--gray-300);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s, padding-left 0.2s;
+      display: inline-block;
+    }
+
+    .footer-links a:hover { color: var(--gold); padding-left: 4px; }
+
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
+
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copyright { font-size: 13px; color: var(--gray-500); }
+    .footer-tagline { font-size: 12px; color: var(--gray-500); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11,31,58,0.85);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--gray-500); transition: color 0.2s, transform 0.2s; }
+    .modal-close:hover { color: var(--navy); transform: rotate(90deg); }
+
+    .modal-icon { width: 72px; height: 72px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 24px; animation: pulse 2s infinite; }
+
+    .modal-box h3 { font-family: var(--font-heading); font-size: 26px; color: var(--navy); margin-bottom: 12px; }
+    .modal-box p { font-size: 15px; color: var(--gray-500); line-height: 1.7; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* stagger delays */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 64px 20px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stats .stat-card:last-child { grid-column: 1 / -1; }
+      .process-steps { grid-template-columns: 1fr; }
+      .audit-card { padding: 32px 20px; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .light-form-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scrollBar"></div>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">FE</div>
+      <div class="logo-text">
+        <span class="logo-name">Fred Essien Udo & Co.</span>
+        <span class="logo-sub">Chartered Accountants</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#free-audit" class="nav-cta">Free Audit</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Geometric shapes -->
+  <div class="geo-shapes">
+    <div class="geo" style="width:80px;height:80px;top:15%;left:8%;--dur:14s;--delay:0s;--rot0:10deg;--rot1:25deg;--ty:-40px;"></div>
+    <div class="geo" style="width:50px;height:50px;top:60%;left:5%;--dur:18s;--delay:3s;--rot0:-5deg;--rot1:15deg;--ty:-25px;"></div>
+    <div class="geo" style="width:120px;height:120px;top:25%;right:5%;--dur:16s;--delay:1s;--rot0:20deg;--rot1:-10deg;--ty:-50px;"></div>
+    <div class="geo" style="width:60px;height:60px;bottom:20%;right:12%;--dur:12s;--delay:4s;--rot0:-15deg;--rot1:30deg;--ty:-30px;"></div>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Trusted Since 1996 — 30 Years of Excellence
+      </div>
+      <h1>
+        <span class="line"><span class="line-inner">Nigeria's Premier</span></span>
+        <span class="line"><span class="line-inner">Accounting &amp; Tax</span></span>
+        <span class="line"><span class="line-inner">Advisory Firm</span></span>
+      </h1>
+      <p class="hero-desc">
+        From small businesses to large enterprises — we handle your accounting, taxation, auditing, and financial management with precision, compliance, and care. So you can focus on growing.
+      </p>
+      <div class="hero-actions">
+        <a href="#free-audit" class="btn-primary">
+          <span>Get Your Free Financial Audit</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number" data-target="30" data-suffix="+">0</span>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="100" data-suffix="+">0</span>
+          <div class="stat-label">Tax Clients Annually</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="50" data-suffix="+">0</span>
+          <div class="stat-label">Audits Per Year</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-title">Our Core Services</div>
+      <div class="hero-card-sub">Everything your business needs under one roof</div>
+      <div class="service-pills">
+        <div class="service-pill">
+          <div class="pill-icon">📊</div>
+          <div class="pill-text">
+            <strong>Accounting &amp; Bookkeeping</strong>
+            <span>General ledger, reconciliations, reporting</span>
+          </div>
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon">🔍</div>
+          <div class="pill-text">
+            <strong>Audit &amp; Assurance</strong>
+            <span>Statutory audits, fraud investigations</span>
+          </div>
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon">🧾</div>
+          <div class="pill-text">
+            <strong>Tax Planning &amp; Compliance</strong>
+            <span>Personal &amp; corporate tax, FIRS filings</span>
+          </div>
+        </div>
+        <div class="service-pill">
+          <div class="pill-icon">📈</div>
+          <div class="pill-text">
+            <strong>Management Consulting</strong>
+            <span>Forecasting, budgets, financial strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Licensed &amp; Registered in Nigeria
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      FIRS Compliant Tax Services
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      100% Confidential &amp; Secure
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Free Initial Consultation
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Comprehensive Financial Services<br>Tailored to Your Needs</h2>
+      <p class="section-desc">From day-to-day bookkeeping to complex tax strategy — we cover every dimension of your financial operations.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="card-icon">📊</div>
+        <h3 class="card-title">Accounting &amp; Bookkeeping</h3>
+        <p class="card-desc">We set up, manage, and optimize your accounting systems — from manual to fully computerized — ensuring accuracy and real-time visibility.</p>
+        <ul class="card-list">
+          <li>Accounting system setup &amp; computerization</li>
+          <li>Asset reports &amp; general ledger entries</li>
+          <li>Monthly, quarterly &amp; annual reconciliations</li>
+          <li>Inventory reserve monitoring</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="card-icon">🔍</div>
+        <h3 class="card-title">Audit &amp; Assurance</h3>
+        <p class="card-desc">We perform thorough statutory audits and fraud investigations to ensure your financials are accurate, compliant, and credible.</p>
+        <ul class="card-list">
+          <li>Statutory financial statement audits</li>
+          <li>Financial fraud investigations</li>
+          <li>Internal control reviews</li>
+          <li>Investment due diligence</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="card-icon">🧾</div>
+        <h3 class="card-title">Tax Planning &amp; Compliance</h3>
+        <p class="card-desc">Stop overpaying taxes. We compute, plan, and negotiate your tax liabilities with Nigerian revenue authorities — for individuals and businesses.</p>
+        <ul class="card-list">
+          <li>Corporate &amp; personal tax computation</li>
+          <li>FIRS filing &amp; compliance</li>
+          <li>Tax liability negotiations</li>
+          <li>Proactive tax planning strategies</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-4">
+        <div class="card-icon">📈</div>
+        <h3 class="card-title">Management Consulting</h3>
+        <p class="card-desc">Turn your financial data into strategic decisions. We provide forecasting, budgetary analysis, and capital planning to drive growth.</p>
+        <ul class="card-list">
+          <li>Financial forecasting &amp; modeling</li>
+          <li>Budget vs. actual variance analysis</li>
+          <li>Capital account interpretation</li>
+          <li>Revenue &amp; expenditure planning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <div class="about-photo-wrap">
+          <div class="about-initials">NU</div>
+          <div class="about-name">Ntudo Udoessien</div>
+          <div class="about-title-tag">Managing Partner</div>
+          <div class="about-metrics">
+            <div class="metric">
+              <span class="metric-val" data-target="30" data-suffix="+">0</span>
+              <div class="metric-lbl">Years Exp.</div>
+            </div>
+            <div class="metric">
+              <span class="metric-val" data-target="100">0</span>
+              <div class="metric-lbl">Tax Plans/Yr</div>
+            </div>
+            <div class="metric">
+              <span class="metric-val" data-target="50">0</span>
+              <div class="metric-lbl">Audits/Yr</div>
+            </div>
+            <div class="metric">
+              <span class="metric-val" data-target="10">0</span>
+              <div class="metric-lbl">Systems/Yr</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Three Decades of Trusted Financial Expertise</h2>
+        <p class="section-desc" style="margin-bottom: 28px;">
+          Founded in 1996, Fred Essien Udo &amp; Co. has grown into one of Nigeria's most trusted accounting and advisory firms. Led by Ntudo Udoessien — a seasoned bookkeeper, tax professional, and team leader — we deliver results that matter.
+        </p>
+        <ul class="about-points">
+          <li class="about-point">
+            <div class="point-icon">🏆</div>
+            <div class="point-text">
+              <strong>Proven Track Record</strong>
+              <span>Over 50 financial statements audited and 100 tax plans executed annually with precision and compliance.</span>
+            </div>
+          </li>
+          <li class="about-point">
+            <div class="point-icon">⚙️</div>
+            <div class="point-text">
+              <strong>Technology-Driven Accounting</strong>
+              <span>We set up and computerize 10+ accounting systems annually, modernizing how businesses manage their finances.</span>
+            </div>
+          </li>
+          <li class="about-point">
+            <div class="point-icon">🤝</div>
+            <div class="point-text">
+              <strong>Multi-Functional Partnership</strong>
+              <span>We work closely with 5 business functions within client companies to ensure accuracy across operations.</span>
+            </div>
+          </li>
+          <li class="about-point">
+            <div class="point-icon">🛡️</div>
+            <div class="point-text">
+              <strong>Strict Compliance &amp; Integrity</strong>
+              <span>Every engagement conducted with unwavering commitment to statutory compliance and ethical standards.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#free-audit" class="btn-primary">
+          Get Your Free Financial Audit <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FREE AUDIT ── -->
+<section id="free-audit">
+  <div class="audit-bg-orb audit-bg-orb-1"></div>
+  <div class="audit-bg-orb audit-bg-orb-2"></div>
+
+  <div class="audit-inner">
+    <div class="audit-header reveal">
+      <div class="section-label" style="color: var(--gold-light);">100% Free — No Obligation</div>
+      <h2 class="section-title">Get Your Free Financial Health Audit</h2>
+      <p class="section-desc">Answer 4 quick questions and our team will prepare a personalized financial health assessment for your business — at no cost.</p>
+    </div>
+
+    <div class="audit-card reveal">
+      <!-- Progress -->
+      <div class="steps-progress" id="stepsProgress">
+        <div class="step-dot active" id="dot1">1</div>
+        <div class="step-line" id="line1"></div>
+        <div class="step-dot" id="dot2">2</div>
+        <div class="step-line" id="line2"></div>
+        <div class="step-dot" id="dot3">3</div>
+        <div class="step-line" id="line3"></div>
+        <div class="step-dot" id="dot4">4</div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" id="step1">
+        <div class="quiz-question">What best describes your business?</div>
+        <div class="quiz-hint">Select the option that fits your current situation.</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="selectOption(this,1)"><span class="quiz-option-icon">🏪</span> Sole Trader / Freelancer</button>
+          <button class="quiz-option" onclick="selectOption(this,1)"><span class="quiz-option-icon">🤝</span> Partnership / SME</button>
+          <button class="quiz-option" onclick="selectOption(this,1)"><span class="quiz-option-icon">🏢</span> Limited Company (Ltd)</button>
+          <button class="quiz-option" onclick="selectOption(this,1)"><span class="quiz-option-icon">👤</span> Individual / Personal</button>
+        </div>
+        <div class="quiz-nav">
+          <div></div>
+          <button class="btn-quiz-next" onclick="nextStep(2)">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" id="step2">
+        <div class="quiz-question">Which area concerns you most right now?</div>
+        <div class="quiz-hint">Pick your biggest financial pain point.</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="selectOption(this,2)"><span class="quiz-option-icon">🧾</span> Tax bills &amp; compliance</button>
+          <button class="quiz-option" onclick="selectOption(this,2)"><span class="quiz-option-icon">📉</span> Cash flow &amp; profitability</button>
+          <button class="quiz-option" onclick="selectOption(this,2)"><span class="quiz-option-icon">📋</span> Messy or missing records</button>
+          <button class="quiz-option" onclick="selectOption(this,2)"><span class="quiz-option-icon">🔍</span> Audit readiness</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-quiz-prev" onclick="prevStep(1)">← Back</button>
+          <button class="btn-quiz-next" onclick="nextStep(3)">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" id="step3">
+        <div class="quiz-question">How long has your business been operating?</div>
+        <div class="quiz-hint">This helps us tailor the right audit approach.</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="selectOption(this,3)"><span class="quiz-option-icon">🌱</span> Less than 1 year</button>
+          <button class="quiz-option" onclick="selectOption(this,3)"><span class="quiz-option-icon">📦</span> 1–5 years</button>
+          <button class="quiz-option" onclick="selectOption(this,3)"><span class="quiz-option-icon">📈</span> 5–15 years</button>
+          <button class="quiz-option" onclick="selectOption(this,3)"><span class="quiz-option-icon">🏛️</span> 15+ years</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-quiz-prev" onclick="prevStep(2)">← Back</button>
+          <button class="btn-quiz-next" onclick="nextStep(4)">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="quiz-step" id="step4">
+        <div class="quiz-question">Where should we send your free audit report?</div>
+        <div class="quiz-hint">We'll reach out within 24 hours with your personalized financial health assessment.</div>
+        <div class="form-grid" style="margin-top:20px;">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-input" id="auditFirstName" placeholder="e.g. Chukwuemeka" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-input" id="auditLastName" placeholder="e.g. Okafor" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="form-input" id="auditEmail" placeholder="you@company.com" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" class="form-input" id="auditPhone" placeholder="+234 800 000 0000" />
+          </div>
+          <div class="form-group full">
+            <label>Company / Business Name</label>
+            <input type="text" class="form-input" id="auditCompany" placeholder="Your company name (optional)" />
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-quiz-prev" onclick="prevStep(3)">← Back</button>
+          <button class="btn-quiz-next" onclick="submitAudit()" style="background: linear-gradient(135deg,#16A34A,#22C55E); box-shadow: 0 4px 20px rgba(22,163,74,0.35);">
+            Send My Free Audit ✓
+          </button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-step" id="stepResult">
+        <div class="result-card">
+          <div class="result-icon">✅</div>
+          <h3 class="result-title">You're All Set!</h3>
+          <div class="result-score">
+            <span>📬 Audit Request Received</span>
+          </div>
+          <p class="result-desc">
+            Thank you! Our team will review your responses and prepare your personalized <strong style="color:var(--gold-light)">Free Financial Health Audit</strong> report. We'll reach out within <strong style="color:var(--gold-light)">24 hours</strong> to schedule your consultation.
+          </p>
+          <a href="#contact" class="btn-primary" style="display:inline-flex;margin:0 auto;">
+            Also Send a Message <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="section-inner">
+    <div class="process-header reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Getting Started is Simple</h2>
+      <p class="section-desc">We follow a clear, structured process to ensure every client gets expert service with zero guesswork.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal delay-1">
+        <div class="step-number">1</div>
+        <div class="step-title">Free Consultation</div>
+        <p class="step-desc">Book a free 30-minute consultation. We learn about your business and identify your most pressing financial needs.</p>
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="step-number">2</div>
+        <div class="step-title">Financial Assessment</div>
+        <p class="step-desc">Our team conducts a thorough review of your current financial position, records, and compliance status.</p>
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="step-number">3</div>
+        <div class="step-title">Tailored Strategy</div>
+        <p class="step-desc">We deliver a clear, actionable plan covering accounting, tax optimization, and financial management improvements.</p>
+      </div>
+      <div class="process-step reveal delay-4">
+        <div class="step-number">4</div>
+        <div class="step-title">Ongoing Support</div>
+        <p class="step-desc">We implement, monitor, and continuously refine your financial systems — acting as your long-term financial partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-label">Client Stories</div>
+      <h2 class="section-title">Trusted by Businesses Across Nigeria</h2>
+      <p class="section-desc">Hear from clients who've transformed their financial operations with Fred Essien Udo &amp; Co.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testimonial-text">"Fred Essien Udo &amp; Co. completely transformed how we handle our accounts. They identified tax savings we had no idea existed — we saved significantly in our first year alone."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AO</div>
+          <div>
+            <div class="author-name">Adebayo Okonkwo</div>
+            <div class="author-role">CEO, Okonkwo Logistics Ltd</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testimonial-text">"The audit process was thorough and professional. They uncovered discrepancies in our books that could have led to serious legal issues. I trust no one else with our financials."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">FN</div>
+          <div>
+            <div class="author-name">Fatima Nwosu</div>
+            <div class="author-role">Director, Nwosu Retail Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="testimonial-text">"As a growing SME, we needed a firm that understood our scale. Their team set up our entire accounting system and now we have full visibility into our finances for the first time."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">KE</div>
+          <div>
+            <div class="author-name">Kelechi Eze</div>
+            <div class="author-role">Founder, TechBuild Nigeria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner">
+  <div class="cta-inner reveal">
+    <h2>Ready to Take Control of Your Finances?</h2>
+    <p>Join 100+ businesses and individuals who trust Fred Essien Udo &amp; Co. to handle their accounting, tax, and audit needs — accurately, legally, and efficiently.</p>
+    <div class="cta-actions">
+      <a href="#free-audit" class="btn-dark">Get Your Free Audit →</a>
+      <a href="#contact" class="btn-outline-dark">Book a Consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Talk About Your Finances</h2>
+        <p class="section-desc" style="margin-bottom:40px;">Have a question or ready to get started? Reach out — our team typically responds within one business day.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Office</div>
+              <div class="contact-item-value">Nigeria</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value">+234 — Contact for details</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">info@fredessienudo.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Business Hours</div>
+              <div class="contact-item-value">Mon – Fri, 8:00 AM – 6:00 PM WAT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <p class="contact-form-sub">Tell us about your needs and we'll get back to you promptly.</p>
+          <div class="light-form-grid">
+            <div class="light-group">
+              <label>First Name</label>
+              <input type="text" class="light-input" placeholder="Chukwuemeka" />
+            </div>
+            <div class="light-group">
+              <label>Last Name</label>
+              <input type="text" class="light-input" placeholder="Okafor" />
+            </div>
+            <div class="light-group">
+              <label>Email Address</label>
+              <input type="email" class="light-input" placeholder="you@company.com" />
+            </div>
+            <div class="light-group">
+              <label>Phone Number</label>
+              <input type="tel" class="light-input" placeholder="+234 800 000 0000" />
+            </div>
+            <div class="light-group full">
+              <label>Service Interested In</label>
+              <select class="light-input">
+                <option value="">Select a service...</option>
+                <option>Accounting &amp; Bookkeeping</option>
+                <option>Audit &amp; Assurance</option>
+                <option>Tax Planning &amp; Compliance</option>
+                <option>Management Consulting</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="light-group full">
+              <label>Message</label>
+              <textarea class="light-input" placeholder="Tell us a bit about your business and what you need help with..."></textarea>
+            </div>
+          </div>
+          <button class="btn-submit" onclick="submitContact()">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="opacity:1;animation:none;">
+          <div class="logo-icon">FE</div>
+          <div class="logo-text">
+            <span class="logo-name">Fred Essien Udo & Co.</span>
+            <span class="logo-sub">Chartered Accountants</span>
+          </div>
+        </a>
+        <p>Trusted financial partner to businesses and individuals across Nigeria since 1996. Precision, compliance, and results — every time.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Accounting &amp; Bookkeeping</a></li>
+          <li><a href="#services">Audit &amp; Assurance</a></li>
+          <li><a href="#services">Tax Planning</a></li>
+          <li><a href="#services">Management Consulting</a></li>
+          <li><a href="#services">Fraud Investigation</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Get Started</div>
+        <ul class="footer-links">
+          <li><a href="#free-audit">Free Financial Audit</a></li>
+          <li><a href="#contact">Book a Consultation</a></li>
+          <li><a href="#contact">Send a Message</a></li>
+        </ul>
+        <div style="margin-top:24px;">
+          <a href="#free-audit" class="btn-primary" style="font-size:13px;padding:12px 20px;">Free Audit →</a>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <div class="footer-copyright">© 2024 Fred Essien Udo &amp; Co. All rights reserved.</div>
+      <div class="footer-tagline">Accounting • Tax • Audit • Management Consulting</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon">✅</div>
+    <h3>Message Sent!</h3>
+    <p>Thank you for reaching out. Our team will review your inquiry and respond within one business day.</p>
+    <br />
+    <a href="#free-audit" class="btn-primary" style="margin:0 auto;display:inline-flex;" onclick="closeModal()">
+      Also Get Your Free Audit <span class="btn-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- ── SCRIPTS ── -->
+<script>
+  /* ── Scroll progress bar ── */
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    document.getElementById('scrollBar').style.width = (scrolled * 100) + '%';
+
+    // Nav bg on scroll
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ── Particles ── */
+  const particlesEl = document.getElementById('particles');
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 1;
+    p.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      --dur: ${Math.random() * 12 + 10}s;
+      --delay: ${Math.random() * 12}s;
+      --op: ${Math.random() * 0.25 + 0.05};
+    `;
+    particlesEl.appendChild(p);
+  }
+
+  /* ── Animate service pills on load ── */
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.service-pill').forEach((pill, i) => {
+      setTimeout(() => {
+        pill.classList.add('loaded');
+        pill.style.animationDelay = `${i * 0.12}s`;
+      }, 1300 + i * 150);
+    });
+
+    /* Counter animation for hero stats on page load */
+    animateCounters(document.querySelectorAll('.hero-stats .stat-number'));
+  });
+
+  /* ── Scroll-based reveal ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+
+        // Animate counters when they enter view
+        const counters = entry.target.querySelectorAll('[data-target]');
+        if (counters.length) animateCounters(counters);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .trust-item, .about-point').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  /* ── Counter animation ── */
+  function animateCounters(elements) {
+    elements.forEach(el => {
+      if (el.dataset.animated) return;
+      el.dataset.animated = '1';
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target + suffix;
+      }
+
+      requestAnimationFrame(update);
+    });
+  }
+
+  /* ── Quiz ── */
+  const selections = {};
+
+  function selectOption(el, step) {
+    el.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    selections[step] = el.textContent.trim();
+  }
+
+  function nextStep(step) {
+    document.getElementById('step' + (step - 1)).classList.remove('active');
+    document.getElementById('step' + step).classList.add('active');
+    updateProgress(step);
+  }
+
+  function prevStep(step) {
+    document.getElementById('step' + (step + 1)).classList.remove('active');
+    document.getElementById('step' + step).classList.add('active');
+    updateProgress(step);
+  }
+
+  function updateProgress(current) {
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('dot' + i);
+      dot.classList.remove('active', 'done');
+      if (i < current) { dot.classList.add('done'); dot.textContent = '✓'; }
+      else if (i === current) { dot.classList.add('active'); dot.textContent = i; }
+      else dot.textContent = i;
+    }
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById('line' + i).classList.toggle('done', i < current);
+    }
+  }
+
+  function submitAudit() {
+    const email = document.getElementById('auditEmail').value;
+    const firstName = document.getElementById('auditFirstName').value;
+    if (!email || !firstName) {
+      alert('Please fill in at least your first name and email address.');
+      return;
+    }
+    document.getElementById('step4').classList.remove('active');
+    document.getElementById('stepResult').classList.add('active');
+    document.getElementById('stepsProgress').style.opacity = '0';
+    document.getElementById('stepsProgress').style.transform = 'translateY(-8px)';
+    document.getElementById('stepsProgress').style.transition = 'all 0.3s';
+  }
+
+  /* ── Contact form ── */
+  function submitContact() {
+    document.getElementById('successModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('successModal').classList.remove('open');
+  }
+
+  document.getElementById('successModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('successModal')) closeModal();
+  });
+
+  /* ── Mobile nav ── */
+  let menuOpen = false;
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      links.style.cssText = `
+        display: flex; flex-direction: column; position: fixed;
+        top: 73px; left: 0; right: 0; z-index: 999;
+        background: rgba(11,31,58,0.98); backdrop-filter: blur(16px);
+        padding: 24px; gap: 20px;
+        border-bottom: 1px solid rgba(201,168,76,0.2);
+        animation: fadeDown 0.3s ease;
+      `;
+    } else {
+      links.style.display = 'none';
+    }
+  }
+
+  /* ── Quiz option ripple effect ── */
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+      btn.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+    });
+  });
+
+  /* ── Smooth nav link close on mobile ── */
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (menuOpen) { menuOpen = false; document.getElementById('navLinks').style.display = 'none'; }
+    });
+  });
+</script>
+</body>
+</html>
