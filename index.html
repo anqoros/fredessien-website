@@ -68,15 +68,14 @@
       position: fixed;
       top: 3px; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(10,31,15,0.0);
-      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
-      border-bottom: 1px solid transparent;
+      background: rgba(10,31,15,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: box-shadow 0.3s ease;
     }
 
     nav.scrolled {
-      background: rgba(10,31,15,0.96);
-      backdrop-filter: blur(16px);
-      border-bottom-color: rgba(201,168,76,0.2);
+      box-shadow: 0 4px 24px rgba(10,31,15,0.4);
     }
 
     .nav-inner {
